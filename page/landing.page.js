@@ -1,18 +1,17 @@
-const Page = require('./page');
+const {Page} = require('./page');
 
-const LandingPage = Object.create(Page, {
+class LandingPage extends Page {
 
- 
-  time_tracking: { get: function() { return $('a=Time Tracking'); } },
-  team: { get: function() { return $('a=Team'); } },
-  projects: { get: function() { return $('a=Projects'); } },
-  clients: { get: function() { return $('a=Clients'); } },
-  invoices: { get: function() { return $('a=Invoices'); } },
-  expenses: { get: function() { return $('a=Expenses'); } },
-  reports: { get: function() { return $('a=Reports'); } },
-  settings: { get: function() { return $('a=Settings'); } },
+  get timeTracking() { return $('a=Time Tracking') }
+  get team() { return $('a=Team') }
+  get projects() { return $('a=Projects') }
+  get clients() { return $('a=Clients') }
+  get invoices() { return $('a=Invoices') }
+  get expenses() { return $('a=Expenses') }
+  get reports() { return $('a=Reports') }
+  get settings() { return $('a=Settings') }
   
 
-});
+}
 
-module.exports = LandingPage
+module.exports = new LandingPage ()

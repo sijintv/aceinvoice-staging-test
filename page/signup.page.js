@@ -8,9 +8,9 @@ class SignupPage extends Page {
   get createAccountHeader() { return $('h3=Create Account') }
   get emailInput() { return $('input[name="email"]') }
   get signupButton() { return $('.btn.btn-primary') }
-  get alreadyHaveAccountWarn() { return $('a.signup-button.border-radius-lg') }
+  get alreadyHaveAccountText() { return $('a.signup-button.border-radius-lg') }
   get signinText() { return $('strong=Sign in')}
-  get error_message() { return $('label=Email can not be empty') }
+  get errorMessage() { return $('label=Email can not be empty') }
 
 
 
