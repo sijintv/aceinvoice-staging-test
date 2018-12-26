@@ -1,8 +1,9 @@
-var assert = require('chai').assert
-var expect = require('chai').expect
-var common = require('../common/common')
-var Constants = require('../common/constants')
-var LoginPage = require('../page/login.page')
+const assert = require('chai').assert;
+const expect = require('chai').expect;
+const common = require('../common/common');
+const Constants = require('../common/constants');
+const LoginPage = require('../page/login.page');
+
 
 
 describe('Verifying Login Flow', () => {
@@ -23,15 +24,18 @@ describe('Verifying Login Flow', () => {
     expect(LoginPage.password.isVisible()).to.exist
   })
 
-  it('Verify error message when clicking on submit button without providing both inputs', () => {
-    browser.url('/')
-    LoginPage.submit()
-    LoginPage.toast_message.waitForText(5000)
-    expect(LoginPage.toast_message.getText()).to.equal('Incorrect email or password')
-  })
+  it(
+    'Verify error message when clicking on submit button without providing both inputs',
+    () => {
+      browser.url('/')
+      LoginPage.submit()
+      LoginPage.toast_message.waitForText(5000)
+      expect(LoginPage.toast_message.getText()).to.equal('Incorrect email or password')
+    }
+  )
 
   it('Success Login', () => {
-    common.Login()
+    common.login()
     expect(LoginPage.profile_name.getText()).to.equal(Constants.name)
   })
 })

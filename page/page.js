@@ -1,9 +1,10 @@
-function Page () {
-  this.title = 'Ace Invoice'
-}
+class Page {
+    constructor() {
+        this.title = 'My Page';
+    }
 
-Page.prototype.open = function (path) {
-  browser.url(path)
+    open(path) {
+        browser.url(path)
+    }
 }
-
-module.exports = new Page()
+module.exports = { Page }

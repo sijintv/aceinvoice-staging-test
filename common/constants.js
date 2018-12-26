@@ -1,7 +1,5 @@
-// 'use strict'
-
 const Constants = {
-  email: 'sijin.tv@bigbinary.com',
+  email: 'sijinads003@gmail.com',
   password: 'alohomora',
   name: 'S.T.V'
 }

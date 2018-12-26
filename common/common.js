@@ -1,10 +1,11 @@
-var expect = require('chai').expect
-var LoginPage = require('../page/login.page')
-var variables = require('../common/constants')
-var landing = require('../page/landing.page')
+const { Page } = require('../page/page')
+const expect = require('chai').expect;
+const LoginPage = require('../page/login.page');
+const variables = require('../common/constants');
+const landing = require('../page/landing.page');
 
-var Common = function () {
-  var Login = () => {
+class Common extends Page {
+  login() {
     browser.url('/')
     LoginPage.username.setValue(variables.email)
     LoginPage.password.setValue(variables.password)
@@ -13,7 +14,7 @@ var Common = function () {
     browser.pause(2000)
   }
 
-  var Tabs = () => {
+  tabs(){
     expect(landing.time_tracking.getText()).to.equal('Time Tracking')
     expect(landing.team.getText()).to.equal('Team')
     expect(landing.projects.getText()).to.equal('Projects')
@@ -23,11 +24,6 @@ var Common = function () {
     expect(landing.reports.getText()).to.equal('Reports')
     expect(landing.settings.getText()).to.equal('Settings')
   }
+}
 
-  return {
-    Login: Login,
-   Tabs: Tabs
-  }
-}()
-
-module.exports = Common
+module.exports = new Common()

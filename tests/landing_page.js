@@ -1,12 +1,11 @@
-
-var Common = require('../common/common')
+const Common = require('../common/common');
 
 beforeEach(() => {
-  Common.Login()
+  Common.login()
 })
 
-describe('Loging in....', function () {
+describe('Loging in....', () => {
   it('There shouldnt be any landing page elements', () => {
-    Common.Tabs()
+    Common.tabs()
   })
 })
